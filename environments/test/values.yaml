@@ -1,0 +1,27 @@
+---
+frontend-nginx:
+  replicaCount: 1
+
+  namespace:
+    name: frontend-test
+
+  image:
+    repository: nginx
+    tag: "1.16.0"
+    pullPolicy: IfNotPresent
+
+  service:
+    name: nginx-service
+    type: ClusterIP
+    port: 80
+    targetPort: 80
+
+  env:
+    name: test
+
+global:
+  cluster:
+    ocp: false
+    aws: false
+    aro: false    
+...
