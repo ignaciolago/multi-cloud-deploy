@@ -9,4 +9,4 @@ maintainers:
 dependencies:
   - name: library-chart
     version: ~1.0.x
-    repository: "https://ignaciolago.github.io/multi-cloud-deploy/library"
+    repository: "https://ignaciolago.github.io/multi-cloud-deploy/library/docs"
