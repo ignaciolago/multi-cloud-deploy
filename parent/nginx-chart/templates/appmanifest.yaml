@@ -1,0 +1,21 @@
+---
+{{- include "library-chart.configmap" . }}
+---
+{{- include "library-chart.deployment" . }}
+---
+{{- include "library-chart.namespace" . }}
+---
+{{- include "library-chart.role" . }}
+---
+{{- include "library-chart.rolebinding" . }}
+---
+{{- include "library-chart.serviceaccount" . }}
+---
+{{- include "library-chart.service" . }}
+---
+{{- include "library-chart.limits" . }}
+---
+{{- include "library-chart.route" . }}
+---
+{{- include "library-chart.ingress" . }}
+---

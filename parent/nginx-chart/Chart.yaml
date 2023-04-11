@@ -1,0 +1,12 @@
+apiVersion: v2
+name: frontend-nginx
+description: My First Helm Chart
+type: application
+version: 1.0.0
+maintainers:
+- email: helmdeployment@mail.com
+  name: rh
+dependencies:
+  - name: library-chart
+    version: ~1.0.x
+    repository: "https://ignaciolago.github.io/multi-cloud-deploy/library"
