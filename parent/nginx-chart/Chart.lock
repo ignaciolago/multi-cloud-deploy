@@ -1,0 +1,6 @@
+dependencies:
+- name: library-chart
+  repository: https://ignaciolago.github.io/multi-cloud-deploy/library/docs
+  version: 1.0.0
+digest: sha256:6d3e306ceab8669304eca014f148da8c685d81314c2d70354a9a678e3191c038
+generated: "2023-04-11T22:27:46.807297+02:00"
