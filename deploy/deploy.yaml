@@ -1,0 +1,46 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: test
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusterDecisionResource:
+        configMapRef: acm-placement
+        labelSelector:
+          matchLabels:
+            cluster.open-cluster-management.io/placement: test-placement
+        requeueAfterSeconds: 180
+  template:
+    metadata:
+      name: test-{{name}}
+      labels:
+        velero.io/exclude-from-backup: "true"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/ignaciolago/multi-cloud-deploy.git
+        targetRevision: umbrella
+        path: environments/test
+        helm:
+          valueFiles:
+            - "{{name}}-values.yaml"
+      destination:
+        namespace: openshift-gitops
+        server: "{{server}}"
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
+        syncOptions:
+          - CreateNamespace=true
+          - PruneLast=true
+---
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: Placement
+metadata:
+  name: test-placement
+  namespace: openshift-gitops
+spec:
+  clusterSets:
+    - gitops-clusters
