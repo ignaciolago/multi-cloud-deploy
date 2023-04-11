@@ -1,12 +1,13 @@
-# helm-tutorial
-helm Chart examples and tutorial resources
-
-This is an example charts repository.
+# helm library and parent 
+this is a library and parent helm charts 
+ths sould be stay in sepaate repos but to simplfy we use the same  
 
 ### How It Works
 
-I set up GitHub Pages to point to the `docs` folder. From there, I can
-create and publish docs like this:
+Here setup GitHub Pages to point to the `docs` folder. From there, then you can
+create and publish docs with version of bot components 
+with dthe folling commands , be crate the index and respective docs to be plushied in github pages to be user later bor umbrella in gitops components: 
+
 
 # library-demo
 
